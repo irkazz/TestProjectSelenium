@@ -8,6 +8,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class SampleApplicationTest {
+    SampleApplicationPage saPage;
+    WebDriverFactory fact = new WebDriverFactory();
     /**
      * Web driver - protocol that allows us talk to the browser ,
      * JUnit is a library to run tests,
@@ -44,8 +46,6 @@ public class SampleApplicationTest {
      * - Kak ponyat', chto testirovano horosho - test coverage, #of bugs, #of cases, bus with cases,
      */
     private WebDriver driver;
-    SampleApplicationPage saPage;
-    WebDriverFactory fact = new WebDriverFactory();
 
     @Before
     public void setUp() {
