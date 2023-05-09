@@ -7,16 +7,12 @@ public class WebDriverFactory {
     WebDriver driver;
 
     public WebDriver createWD(BrowserType browser) {
-        switch (browser) {
-            case chrome -> {
-                System.setProperty("webdriver.chrome.driver", "/C:/Users/irkaz/chromedriver_win32/chromedriver.exe");
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--remote-allow-origins=*");
-                return new ChromeDriver(options);
-            }
-            default -> {
-                throw new IllegalArgumentException();
-            }
+        if (browser == BrowserType.chrome) {
+            System.setProperty("webdriver.chrome.driver", "/C:/Users/irkaz/chromedriver_win32/chromedriver.exe");
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--remote-allow-origins=*");
+            return new ChromeDriver(options);
         }
+        throw new IllegalArgumentException();
     }
 }

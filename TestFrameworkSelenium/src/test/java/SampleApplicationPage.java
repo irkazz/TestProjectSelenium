@@ -1,7 +1,13 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class SampleApplicationPage extends BasePage {
+
+    @FindBy (css="input[name='firstname']")
+    private WebElement firstName;
+
     public SampleApplicationPage(WebDriver driver) {
         super(driver);
     }
@@ -20,8 +26,8 @@ public class SampleApplicationPage extends BasePage {
 
     public String getPageURL(int sprint) {
         String url = "sample-application-lifecycle-sprint-" + sprint + "/";
-        return new StringBuilder().append(baseUrl)
-                .append(url).toString();
+        return baseUrl +
+                url;
     }
 
     protected By getRadioButton(String gender) {
