@@ -4,6 +4,10 @@ import org.openqa.selenium.WebDriver;
 public class SampleApplicationPage4 extends SampleApplicationPage {
     private int formId;
 
+    public SampleApplicationPage4(WebDriver driver) {
+        super(driver);
+    }
+
     @Override
     protected By getFirstNameInput() {
         return By.cssSelector("input#f" + formId + "[name='firstname']");
@@ -21,11 +25,6 @@ public class SampleApplicationPage4 extends SampleApplicationPage {
 
     public void setFormId(int id) {
         formId = id;
-    }
-
-
-    public SampleApplicationPage4(WebDriver driver) {
-        super(driver);
     }
 
     protected final By getRadioButton(String gender) {

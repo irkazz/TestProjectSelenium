@@ -26,11 +26,11 @@ public class TestUser {
         this.lastName = lastName;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public String getGender() {
         return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
